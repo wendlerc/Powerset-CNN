@@ -65,11 +65,11 @@ hyperparameters appropriately:
 ```bash
 python -m exp.train_model with model.PCN dataset.AJ
 ```
-To train and test the 2-layer powerset convolutional neural network with shift s_A -> s_{A \setminus \{x\}} and
+To train and test the 2-layer powerset convolutional neural network with shift <a href="https://www.codecogs.com/eqnedit.php?latex=s_A&space;\mapsto&space;s_{A&space;\setminus&space;\{x\}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?s_A&space;\mapsto&space;s_{A&space;\setminus&space;\{x\}}" title="s_A \mapsto s_{A \setminus \{x\}}" /></a> and
 ```bash
 python -m exp.train_model with model.PCN model.signal_model=4 dataset.AJ
 ```
-to train the 2-layer powerset convolutional neural network with shift s_A -> s_{A \cup \{x\}}.
+to train the 2-layer powerset convolutional neural network with shift <a href="https://www.codecogs.com/eqnedit.php?latex=s_A&space;\mapsto&space;s_{A&space;\cup&space;\{x\}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?s_A&space;\mapsto&space;s_{A&space;\cup&space;\{x\}}" title="s_A \mapsto s_{A \cup \{x\}}" /></a>.
 
 Remaining model names: model.KIPF (Laplacian based graph convolution on the hypercube), model.ADJ
 adjacency based graph convolution on the hypercube), model.MLP (mutli-layer perceptron).

@@ -28,3 +28,65 @@ We present a novel class of convolutional neural networks (CNNs) for set functio
     primaryClass={cs.LG}
 }
 ```
+
+## Acknowledgements
+
+The project structure was provided by Max Horn.
+
+## Structure
+
+We separate general code (in the `src` module) from code used to run experiments
+(in the `exp` module).
+General code represents the definition of models and neural network architectures.
+Experiments are sacred scripts with configuration parameters, which then call parts of
+the `general code`.
+
+## Installation
+
+The dependecies of the project can be installed using pipenv.
+To install all dependecies required for the project run `pipenv install` in
+the root project folder (containing the file `Pipfile`).
+
+It is then possible to run commands in the project specific virtual environment using
+`pipenv shell`.
+
+Finally, as pipenv does not support multiple dedicated package configurations, it is
+possible to change the default tensorflow packages with the correposnding gpu versions
+(for example when it is defied to run code on a gpu server).
+
+This can be done using the command `pipenv run install-gpu-packages`.
+
+
+## Experiments
+
+The experiments for which the results are reported in the paper can be run using the command and exchanging model and
+hyperparameters appropriately:
+
+```bash
+python -m exp.train_model with model.PCN dataset.AJ
+```
+To train and test the 2-layer powerset convolutional neural network with shift s_A -> s_{A \setminus \{x\}} and
+```bash
+python -m exp.train_model with model.PCN model.signal_model=4 dataset.AJ
+```
+to train the 2-layer powerset convolutional neural network with shift s_A -> s_{A \cup \{x\}}.
+
+Remaining model names: model.KIPF (Laplacian based graph convolution on the hypercube), model.ADJ
+adjacency based graph convolution on the hypercube), model.MLP (mutli-layer perceptron).
+
+Hyperparameters: model.pooling=pm (for pooling)
+model.use_sum=True (for the average aggregation step before the MLP)
+
+Datasets: dataset.AH (Spectral Patterns), dataset.AJ (k-Junta), dataset.AXM (coverage vs. 'almost coverage'),
+dataset.DOM4 (four class domain classification), dataset.DOM6 (six class domain classification),
+dataset.CON10 (congress-bills open vs. closed hyperedge), dataset.COAUTH10 (coauthorship closed hyperedge vs.
+not-closed hyperedge)
+
+In order to store the output of a training run alongside with its configuration,
+we can call the sacred script using the `-F` flag which writes all of the runs output into
+the folder defined by `-F`:
+```bash
+python -m exp.train_model with model.PCN dataset.AJ -F target_dir
+```
+
+

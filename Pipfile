@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+ipython = "*"
+
+[packages]
+numpy = "*"
+pandas = "*"
+sacred = {git = "https://github.com/IDSIA/sacred.git", editable = true}
+ipdb = "*"
+matplotlib = "*"
+sklearn = "*"
+scikit-optimize = "*"
+tensorflow = "==1.12.0" 
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+install-gpu-packages = "bash -c \"pip uninstall -y tensorflow tensorflow-probability && pip install tensorflow-gpu tensorflow-probability-gpu\""

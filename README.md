@@ -9,23 +9,11 @@ We present a novel class of convolutional neural networks (CNNs) for set functio
 
 ```bibtex
 @inproceedings{wendler2019powerset,
-    title={Powerset Convolutional Neural Networks},
-    author={Wendler, Chris and Alistarh, Dan and P{\"u}schel, Markus},
-    year={2019},
-    booktitle={Advances in Neural Information Processing Systems}
-}
-```
-
-### arXiv
-
-```bibtex
-@misc{wendler2019powerset,
-    title={Powerset Convolutional Neural Networks},
-    author={Wendler, Chris and Alistarh, Dan and P{\"u}schel, Markus},
-    year={2019},
-    eprint={1909.02253},
-    archivePrefix={arXiv},
-    primaryClass={cs.LG}
+  title={Powerset convolutional neural networks},
+  author={Wendler, Chris and Alistarh, Dan and P{\"u}schel, Markus},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={927--938},
+  year={2019}
 }
 ```
 

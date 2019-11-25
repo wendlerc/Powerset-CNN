@@ -5,8 +5,6 @@ We present a novel class of convolutional neural networks (CNNs) for set functio
 
 ## Bibtex
 
-### NIPS (pages will be added asap)
-
 ```bibtex
 @inproceedings{wendler2019powerset,
   title={Powerset convolutional neural networks},
